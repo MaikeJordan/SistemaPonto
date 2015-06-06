@@ -44,4 +44,18 @@
 		
 		endif;		
 	}
+        
+        public function get_byEmail($email= NULL, $senha = NULL){
+		if($email != NULL && $senha != NULL):
+                    $sql = "SELECT * FROM funcionario WHERE email = ? AND senha = ?";
+                    $query = $this->db->query($sql, array($email, $senha));
+			if($query->num_rows() > 0 && $query->num_rows() == 1):
+				return $query;
+			else:
+				return false;
+			endif;
+		else:	
+			return false;
+		endif;		
+	}
  }

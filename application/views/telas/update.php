@@ -12,7 +12,7 @@
 	$funcionarioid = $this->uri->segment(3);
 	if($funcionarioid == NULL) redirect('CadastroFuncionario/retrieve');
 	
-	$query = $this->CadastroFuncionario->get_byid($funcionarioid)->row();
+	$query = $this->FuncionarioDAO->get_byid($funcionarioid)->row();
 	
 	echo form_open("CadastroFuncionario/update/$funcionarioid");
 	
@@ -28,6 +28,8 @@
         echo form_input(array('name' => 'identidade', 'class' => 'form-control', 'placeholder' => 'Identidade'), set_value('identidade', $query->identidade)) . "<br />"; 	
         echo form_label('Salário (*)') . "<br />";
         echo form_input(array('name' => 'salario', 'class' => 'form-control', 'placeholder' => 'Salário'), set_value('salario', $query->salario)) . "<br />";
+        echo form_label('Carga Horária (*)') . "<br />";
+        echo form_input(array('name' => 'cargahoraria', 'class' => 'form-control', 'placeholder' => 'Carga Horária'), set_value('cargahoraria', $query->cargahoraria)) . "<br />";
         echo form_label('Email') . "<br />";
 	echo form_input(array('name' => 'email', 'class' => 'form-control'), set_value('email', $query->email)) . "<br />";
 	echo form_label('Login') . "<br />";

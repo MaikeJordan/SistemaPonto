@@ -22,26 +22,13 @@
 		    <li>Relátorio anual</li>   
 		  </ul>
 		</div>
-	    <div class="panel panel-default">
-		  <!-- Default panel contents -->
-		  <div class="panel-heading">
-		  	<h3 class="panel-title"> <span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span> Veiculo </h3>
-		  </div>
-		  <div>	
-		  <!-- List group -->
-		  <ul>
-		    <li><?php echo anchor('gerenciador/entrada', 'Entrada') ?><br></li>
-		    <li><?php echo anchor('gerenciador/saida', 'Saída') ?><br></li>  
-		  </ul>
-		  </div>
-		</div>
-		<div class="panel panel-default">
+	    	<div class="panel panel-default">
 	  <div class="panel-heading">
 	    <h3 class="panel-title"> <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Novo</h3>
 	  </div>
 	  <div>
 	  	<ul>
-		    <li><?php echo anchor('usuario/cadastrar', 'Usuário') ?></li>
+		    <li><?php echo anchor('CadastroFuncionario/create', 'Funcionário') ?></li>
 		    <li><?php echo anchor('cliente/cadastrar', 'Cliente') ?></li>
 		    <li><?php echo anchor('veiculo/cadastrar', 'Veiculo') ?></li>
 		    <li>Adminstrador</li>

@@ -1,5 +1,8 @@
 <?php
-$this->load->view('includes/header');
-$this->load->view('includes/menu');
-if($tela!='') $this->load->view('telas/'.$tela);
-$this->load->view('includes/footer');
+$this->load->view('telaUteis/header');
+$this->load->view('telaUteis/menu');
+//$this->load->view('telaUteis/pesquisa');
+$this->load->view('telaUteis/menuLeft');
+$this->load->view('telas/create');
+//if($tela!='') $this->load->view($tela);
+$this->load->view('telaUteis/footer');

@@ -16,9 +16,9 @@
 	);
 
 	$this->table->set_template($template);
-	$this->table->set_heading('ID', 'Nome', 'CPF', 'Identidade', 'Salario', 'Email', 'Login', 'Operações');
+	$this->table->set_heading('ID', 'Nome', 'CPF', 'Identidade', 'Salario', 'Carga Horária', 'Email', 'Login', 'Operações');
 	foreach ($usuarios as $linha):
-		$this->table->add_row($linha->funcionarioid, $linha->nome, $linha->cpf, $linha->identidade, $linha->salario, $linha->email, $linha->login, anchor("CadastroFuncionario/update/$linha->funcionarioid", 'Editar') . ' - '. anchor("CadastroFuncionario/delete/$linha->funcionarioid", 'Deletar'));
+		$this->table->add_row($linha->funcionarioid, $linha->nome, $linha->cpf, $linha->identidade, $linha->salario, $linha->cargahoraria, $linha->email, $linha->login, anchor("CadastroFuncionario/update/$linha->funcionarioid", 'Editar') . ' - '. anchor("CadastroFuncionario/delete/$linha->funcionarioid", 'Deletar'));
 	endforeach;
 	
 	echo $this->table->generate();

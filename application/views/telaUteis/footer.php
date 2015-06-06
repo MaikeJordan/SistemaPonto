@@ -4,7 +4,7 @@
 			<div class="row">
 			  <div class="col-md-6 col-md-offset-3">
 			  	<footer class="text-center"> 
-			  		<small> Sistema de Gestão de Estacionamento by </small>
+			  		<small> Sistema de Ponto by </small>
 			  		<mark> Equipe TADS - JANUÁRIA</mark> 
 			 	 </footer>
 			  </div>
