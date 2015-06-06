@@ -6,7 +6,7 @@
 	<br />
 	<div class="panel panel-default">
 	  <div class="panel-heading">
-	    <h3 class="panel-title">Usuários Cadastrados</h3>
+	    <h3 class="panel-title">Funcionários Cadastrados</h3>
 	  </div>
 	  <div class="panel-body">
 	  	<div class="table-responsive"></div>
@@ -16,10 +16,9 @@
 	);
 
 	$this->table->set_template($template);
-	$this->table->set_heading('ID', 'Nome', 'Email', 'Login', 'Operações');
+	$this->table->set_heading('ID', 'Nome', 'CPF', 'Identidade', 'Salario', 'Email', 'Login', 'Operações');
 	foreach ($usuarios as $linha):
-		$this->table->add_row($linha->id, $linha->nome, $linha->email, $linha->login, 
-							anchor("crud/update/$linha->id", 'Editar') . ' - '. anchor("crud/delete/$linha->id", 'Deletar'));
+		$this->table->add_row($linha->funcionarioid, $linha->nome, $linha->cpf, $linha->identidade, $linha->salario, $linha->email, $linha->login, anchor("CadastroFuncionario/update/$linha->funcionarioid", 'Editar') . ' - '. anchor("CadastroFuncionario/delete/$linha->funcionarioid", 'Deletar'));
 	endforeach;
 	
 	echo $this->table->generate();

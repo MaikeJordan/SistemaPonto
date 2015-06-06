@@ -1,9 +1,9 @@
 <?php 
 	echo "<br />";
-	$iduser = $this->uri->segment(3);
-	if($iduser == NULL) redirect('crud/update');
+	$funcionarioid = $this->uri->segment(3);
+	if($funcionarioid == NULL) redirect('CadastroFuncionario/retrieve');
 	
-	$query = $this->crud->get_byid($iduser)->row();
+	$query = $this->CadastroFuncionario->get_byid($funcionarioid)->row();
 ?>
 	
 	<div class="panel panel-default">
@@ -12,7 +12,7 @@
 	  </div>
 	  <div class="panel-body">
 <?php
-	echo form_open("crud/delete/$iduser");
+	echo form_open("CadastroFuncionario/delete/$funcionarioid");
 
 	echo form_label('Nome Completo') . "<br />";
 	echo form_input(array('id' => 'nome', 'name' => 'nome', 'class' => 'form-control'), set_value('nome', $query->nome), 'disabled="disabled"') . "<br />";
@@ -20,9 +20,9 @@
 	echo form_input(array('name' => 'email', 'class' => 'form-control'), set_value('email', $query->email), 'disabled="disabled"') . "<br />";
 	echo form_label('Login') . "<br />";
 	echo form_input(array('name' => 'login', 'class' => 'form-control'), set_value('login', $query->login), 'disabled="disabled"') . "<br />";
-	echo form_hidden("idusuario", $query->id);
+	echo form_hidden("funcionarioid", $query->funcionarioid);
 	echo '<button type="button" class="btn btn-danger" data-toggle="modal" data-target=".bs-example-modal-sm">Excluir registro</button>';
-	//echo form_submit(array('name' => 'cadastrar', 'class' => 'btn btn-primary'), 'Excluir Registro'). "<br />";
+        //echo form_submit(array('name' => 'cadastrar', 'class' => 'btn btn-primary'), 'Excluir Registro'). "<br />";
 	
 	
 

@@ -17,8 +17,8 @@
 	if($active == 'delete')
 		$active4 = 'active';
   ?>
-  <li role="presentation" class="<?php echo $active1 ?>"><?php echo anchor('crud/create', 'Create') ?></li>
-  <li role="presentation" class="<?php echo $active2 ?>"><?php echo anchor('crud/retrieve', 'Retrieve') ?></li>
-  <li role="presentation" class="<?php echo $active3 ?>"><?php echo anchor('crud/update', 'Update') ?></li>
-  <li role="presentation" class="<?php echo $active4 ?>"><?php echo anchor('crud/delete', 'Delete') ?></li>
+  <li role="presentation" class="<?php echo $active1 ?>"><?php echo anchor('CadastroFuncionario/create', 'Create') ?></li>
+  <li role="presentation" class="<?php echo $active2 ?>"><?php echo anchor('CadastroFuncionario/retrieve', 'Retrieve') ?></li>
+  <li role="presentation" class="<?php echo $active3 ?>"><?php echo anchor('CadastroFuncionario/update', 'Update') ?></li>
+  <li role="presentation" class="<?php echo $active4 ?>"><?php echo anchor('CadastroFuncionario/delete', 'Delete') ?></li>
 </ul>
