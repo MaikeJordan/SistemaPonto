@@ -10,11 +10,11 @@
 <?php
 	}
 	$funcionarioid = $this->uri->segment(3);
-	if($funcionarioid == NULL) redirect('CadastroFuncionario/retrieve');
+	if($funcionarioid == NULL) redirect('Funcionario/retrieve');
 	
 	$query = $this->FuncionarioDAO->get_byid($funcionarioid)->row();
 	
-	echo form_open("CadastroFuncionario/update/$funcionarioid");
+	echo form_open("Funcionario/update/$funcionarioid");
 	
 		
 	if($this->session->flashdata('edicaook')):

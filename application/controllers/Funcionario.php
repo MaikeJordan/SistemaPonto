@@ -3,7 +3,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class CadastroFuncionario extends CI_Controller {
+class Funcionario extends CI_Controller {
 
     function __construct() {
         parent:: __construct();
@@ -12,7 +12,7 @@ class CadastroFuncionario extends CI_Controller {
         $this->load->library('form_validation');
         $this->load->helper('array');
         $this->load->library('session');
-        $this->load->model('CadastroFuncionarioModel', 'FuncionarioDAO');
+        $this->load->model('FuncionarioModel', 'FuncionarioDAO');
         $this->load->library('table');
     }
 
@@ -22,7 +22,7 @@ class CadastroFuncionario extends CI_Controller {
             'tela' => 'create',
             'active' => 'create',
         );
-        $this->load->view('CadastroFuncionario', $dados);
+        $this->load->view('Funcionario', $dados);
     }
 
     public function create() {
@@ -48,19 +48,19 @@ class CadastroFuncionario extends CI_Controller {
             'titulo' => 'Cadastro de Funcionário',
             'tela' => 'create',
             'active' => 'create',);
-        $this->load->view('CadastroFuncionario', $dados);
+        $this->load->view('Funcionario', $dados);
     }
 
     public function retrieve() {
 
         $dados = array(
-            'titulo' => 'CadastroFuncionario com CodeIgniter',
+            'titulo' => 'Cadastro de Funcionario com CodeIgniter',
             'tela' => 'retrieve',
             'usuarios' => $this->FuncionarioDAO->get_all()->result(),
-            'active' => 'retreive',
+            'active' => 'retrieve',
         );
 
-        $this->load->view('CadastroFuncionario', $dados);
+        $this->load->view('Funcionario', $dados);
     }
 
     public function update() {
@@ -78,7 +78,7 @@ class CadastroFuncionario extends CI_Controller {
         if ($this->form_validation->run() == TRUE):
             $dados = elements(array('nome', 'cpf', 'identidade', 'salario', 'cargahoraria', 'email', 'login', 'senha'), $this->input->post());
             $dados['senha'] = md5($dados['senha']);
-            //$this->CadastroFuncionario->do_insert($dados);
+            //$this->Funcionario->do_insert($dados);
             $this->FuncionarioDAO->do_update($dados, array('funcionarioid' => $this->input->post('funcionarioid')));
             echo "Validação ok, inserir no bd";
 
@@ -86,11 +86,11 @@ class CadastroFuncionario extends CI_Controller {
 
 
         $dados = array(
-            'titulo' => 'Cadastro de Funcionario &raquo Update',
+            'titulo' => 'Funcionario &raquo Update',
             'tela' => 'update',
             'active' => 'update',
         );
-        $this->load->view('CadastroFuncionario', $dados);
+        $this->load->view('Funcionario', $dados);
     }
 
     public function delete() {
@@ -100,11 +100,11 @@ class CadastroFuncionario extends CI_Controller {
         endif;
 
         $dados = array(
-            'titulo' => 'CadastroFuncionario &raquo Delete',
+            'titulo' => 'Funcionario &raquo Delete',
             'tela' => 'delete',
             'active' => 'delete',
         );
-        $this->load->view('CadastroFuncionario', $dados);
+        $this->load->view('Funcionario', $dados);
     }
 
     public function login() {
@@ -128,10 +128,10 @@ class CadastroFuncionario extends CI_Controller {
                     'esta_logado' => TRUE,
                 );
                 $this->session->set_userdata($novousuario);
-                redirect('CadastroFuncionario/create');
+                redirect('Funcionario/create');
             else:
                 $this->session->set_flashdata('usuarioinvalido', 'Email ou senha invalido. Tente novamente!');
-                redirect('/');
+                redirect('inicio/');
             endif;
         }else {
             $this->session->set_flashdata('usuarioinvalido', 'Os campos não foram preenchidos corretamente ou podem está vazios!');

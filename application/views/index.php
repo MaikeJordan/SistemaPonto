@@ -13,7 +13,7 @@
 				echo ModMensagemUtil::getCloseAlertMensagem();
 			endif;
 			echo PainelUtil::getOpenPainel(IconsUtil::getIcone(IconsUtil::ICON_USER).' Login', PainelUtil::PAINEL_INFO);
-				echo form_open("CadastroFuncionario/login");
+				echo form_open("Funcionario/login");
 				echo form_label('Email (*)') . "<br />";
 				echo form_input(array('name' => 'email', 'type' => 'email',  'class' => 'form-control' , 'placeholder' => 'exemple@exemple.com'), set_value('email')) . "<br />";
 				echo form_label("Senha") . "<br />";

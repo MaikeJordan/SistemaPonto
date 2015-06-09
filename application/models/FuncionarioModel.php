@@ -1,14 +1,14 @@
 <?php
  defined('BASEPATH') OR exit('No direct script access allowed');
  
- class CadastroFuncionarioModel extends CI_Model{
+ class FuncionarioModel extends CI_Model{
  	
 	public function do_insert($dados=NULL){
 		
 		if($dados != NULL):
 			$this->db->insert('funcionario', $dados);
 			$this->session->set_flashdata('cadastrook', 'Cadastro efetuado com sucesso!');
-			redirect('CadastroFuncionario/create');
+			redirect('Funcionario/create');
 		endif;
 	}
 	
@@ -27,7 +27,7 @@
 			$this->session->set_flashdata('excluirok', 'Registro deletado com sucesso!');
 		endif;
 		
-		redirect('CadastroFuncionario/retrieve');
+		redirect('Funcionario/retrieve');
 	}
 	
 	public function get_all(){
@@ -57,5 +57,15 @@
 		else:	
 			return false;
 		endif;		
+	}
+        
+        public function selectFuncionario(){
+		$query = $this->db->get('funcionario');
+		if($query->num_rows() > 0):
+			return $query;
+		else:
+			return false;
+		endif;
+	
 	}
  }

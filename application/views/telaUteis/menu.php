@@ -23,10 +23,10 @@
 		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                               <?php echo $this->session->nome; ?> <span class="caret"></span></a>
 		          <ul class="dropdown-menu" role="menu">
-		            <li><?php echo anchor('usuario/update', IconsUtil::getIcone(IconsUtil::ICON_PENCIL).' Editar Dados') ?></li>
+		            <li><?php echo anchor('Funcionario/update', IconsUtil::getIcone(IconsUtil::ICON_PENCIL).' Editar Dados') ?></li>
 		            <li><a href="#"><?php echo IconsUtil::getIcone(IconsUtil::ICON_COG); ?> Configurações</a></li>
 		            <li class="divider"></li>
-		            <li><?php echo anchor('CadastroFuncionario/logout', IconsUtil::getIcone(IconsUtil::ICON_OFF).' Sair') ?></li>
+		            <li><?php echo anchor('Funcionario/logout', IconsUtil::getIcone(IconsUtil::ICON_OFF).' Sair') ?></li>
 		          </ul>
 		        </li>
 		      </ul>

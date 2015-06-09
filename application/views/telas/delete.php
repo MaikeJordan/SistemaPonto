@@ -12,7 +12,7 @@
 	  </div>
 	  <div class="panel-body">
 <?php
-	echo form_open("CadastroFuncionario/delete/$funcionarioid");
+	echo form_open("Funcionario/delete/$funcionarioid");
 
 	echo form_label('Nome Completo') . "<br />";
 	echo form_input(array('id' => 'nome', 'name' => 'nome', 'class' => 'form-control'), set_value('nome', $query->nome), 'disabled="disabled"') . "<br />";
