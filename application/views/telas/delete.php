@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 	echo "<br />";
 	$funcionarioid = $this->uri->segment(3);
 	if($funcionarioid == NULL) redirect('CadastroFuncionario/retrieve');

@@ -1,4 +1,9 @@
 <?php
+if($this->session->funcionarioid == NULL)
+    redirect('inicio/index');
+if($this->session->permissao != 1)
+    redirect('ponto/create');
+
 if (validation_errors() != NULL):
     echo ModMensagemUtil::getAlertMensagemClose(ModMensagemUtil::ALERT_DANGER);
     echo validation_errors();
@@ -13,7 +18,7 @@ endif;
 ?>
 
 <a name="cadastro"></a>
-<div class="panel panel-default">
+<div class="panel panel-success">
     <div class="panel-heading">    
         <h3 class="panel-title">
             <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Cadastro de Funcionario</h3>
@@ -47,7 +52,7 @@ endif;
                     echo DivUtil::openDivRow();
                     echo DivUtil::openDivColMod("col-md-12");
                     echo '<span id="sumit" style="display: inline;float: right;">';
-                    echo form_submit(array('name' => 'cadastrar', 'class' => 'btn btn-primary'), 'Cadastrar') . "<br />";
+                    echo form_submit(array('name' => 'cadastrar', 'class' => 'btn btn-success'), 'Cadastrar') . "<br />";
                     echo '</span>';
                     echo DivUtil::closeDiv();
                     echo DivUtil::closeDivRow();

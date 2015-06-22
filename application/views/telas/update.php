@@ -1,5 +1,5 @@
 <?php
-	echo "<br />";
+    echo "<br />";
 	if(validation_errors() != NULL){
 ?>
 
@@ -12,7 +12,7 @@
 	$funcionarioid = $this->uri->segment(3);
 	if($funcionarioid == NULL) redirect('Funcionario/retrieve');
 	
-	$query = $this->FuncionarioDAO->get_byid($funcionarioid)->row();
+	$query = $this->FuncionarioDAO->get_byid($this->session->funcionarioid)->row();
 	
 	echo form_open("Funcionario/update/$funcionarioid");
 	
@@ -39,6 +39,6 @@
 	echo form_label("Repita a senha") . "<br />";
 	echo form_password(array('name' => 'senha2', 'class' => 'form-control'), set_value('senha2')) . "<br /> <br />";
 	echo form_hidden('funcionarioid', $query->funcionarioid);
-	echo form_submit(array('name' => 'cadastrar', 'class' => 'btn btn-primary'), 'Alterar dados'). "<br />";
+	echo form_submit(array('name' => 'cadastrar', 'class' => 'btn btn-success'), 'Alterar dados'). "<br />";
 	
 	echo form_close();

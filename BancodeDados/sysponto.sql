@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tempo de Geração: Jun 02, 2015 as 02:15 PM
+-- Tempo de Geração: Jun 09, 2015 as 11:23 AM
 -- Versão do Servidor: 5.1.33
 -- Versão do PHP: 5.2.9
 
@@ -46,19 +46,24 @@ CREATE TABLE IF NOT EXISTS `bancodehoras` (
 
 CREATE TABLE IF NOT EXISTS `funcionario` (
   `funcionarioid` int(11) NOT NULL AUTO_INCREMENT,
-  `usuarioid` int(11) DEFAULT NULL,
   `nome` varchar(200) NOT NULL,
   `cpf` varchar(12) NOT NULL,
   `salario` double NOT NULL,
+  `cargahoraria` int(11) NOT NULL,
   `status` tinyint(1) DEFAULT NULL,
-  PRIMARY KEY (`funcionarioid`),
-  KEY `usuarioid` (`usuarioid`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `email` varchar(30) DEFAULT NULL,
+  `identidade` varchar(30) DEFAULT NULL,
+  `login` varchar(25) DEFAULT NULL,
+  `senha` varchar(32) DEFAULT NULL,
+  PRIMARY KEY (`funcionarioid`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Extraindo dados da tabela `funcionario`
 --
 
+INSERT INTO `funcionario` (`funcionarioid`, `nome`, `cpf`, `salario`, `cargahoraria`, `status`, `email`, `identidade`, `login`, `senha`) VALUES
+(6, 'Maike', '12061177611', 1222, 40, NULL, 'maikejordan@gmail.com', '17.830.836', 'maike', '202cb962ac59075b964b07152d234b70');
 
 -- --------------------------------------------------------
 

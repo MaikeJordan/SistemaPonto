@@ -1,4 +1,6 @@
-<?php 
+<?php
+if($this->session->permissao != 1)
+    redirect('ponto/create');
 	if($this->session->flashdata('excluirok')):
 			echo '<div class="alert alert-success" role="alert"> <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>  ' .$this->session->flashdata('excluirok') . '</div>';
 		endif;

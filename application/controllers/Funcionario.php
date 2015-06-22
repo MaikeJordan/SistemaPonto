@@ -119,13 +119,17 @@ class Funcionario extends CI_Controller {
 
             if ($funcionario != false):
                 foreach ($funcionario->result() as $linha):
+                    $funcionarioid = $linha->funcionarioid;
                     $nome = $linha->nome;
                     $email = $linha->email;
+                    $permissao = $linha->status;
                 endforeach;
                 $novousuario = array(
+                    'funcionarioid' => $funcionarioid,
                     'nome' => $nome,
                     'email' => $email,
                     'esta_logado' => TRUE,
+                    'permissao' => $permissao
                 );
                 $this->session->set_userdata($novousuario);
                 redirect('Funcionario/create');

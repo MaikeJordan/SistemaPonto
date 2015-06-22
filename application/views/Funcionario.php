@@ -6,5 +6,5 @@ $this->load->view('telaUteis/menuLeft');
 $this->load->view('telas/'.$tela);
 //if($tela!='') $this->load->view($tela);
 $this->load->view('telaUteis/footer');
-if($tela!='') $this->load->view($tela);
-$this->load->view('telaUteis/footer');
+//if($tela!='') $this->load->view($tela);
+//$this->load->view('telaUteis/footer');

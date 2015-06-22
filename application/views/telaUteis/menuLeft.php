@@ -3,37 +3,31 @@
 
 <div class="row">
     <div class="col-md-3">
-        <div class="panel panel-default">
+        <div class="panel panel-success">
             <div class="panel-heading">
                 <h3 class="panel-title" id="menu">
                     <span id="menutitle" class=""><?php echo IconsUtil::getIcone(IconsUtil::ICON_TH_LIST) . ' '; ?> Menu </span>
                 </h3>  
             </div>
             <div class="panel-body" id="divclose">
-                <div class="panel panel-default">
+                <div class="panel panel-success">
                     <!-- Default panel contents -->
-                    <div class="panel-heading"> <h3 class="panel-title">  <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>  Adminstração</div> </h3>
+                    <div class="panel-heading"> <h3 class="panel-title">  <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>  Funcionário</div> </h3>
                     <!-- List group -->
                     <ul>
-                        <li>Gerenciamento</li>
-                        <li>Caixa</li>  
-                        <li>Relátorio diário</li>  
-                        <li>Relátorio mensal</li> 
-                        <li>Relátorio anual</li>
+                        <li><?php echo anchor('Funcionario/create', 'Funcionário') ?></li>
+                        <li><?php echo anchor('Funcionario/retrieve', 'Listar') ?></li>
+                        <li><?php echo anchor('Funcionario/update/'.$this->session->funcionarioid, 'Editar') ?></li>
                     </ul>
                 </div>
-                <div class="panel panel-default">
+                <div class="panel panel-success">
                     <div class="panel-heading">
-                        <h3 class="panel-title"> <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Novo</h3>
+                        <h3 class="panel-title"> <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Cadastrar Ponto</h3>
                     </div>
                     <div>
                         <ul>
-                            <li><?php echo anchor('Funcionario/create', 'Funcionário') ?></li>
-                            <li><?php echo anchor('Funcionario/retrieve', 'Listar') ?></li>
-                            <li><?php echo anchor('Funcionario/update', 'Editar') ?></li>
-                            <li>Adminstrador</li>
-                            <li><?php echo anchor('veiculo/cadastarCategoria', 'Categoria') ?></li>
-                            <li>Mais sugestões</li>
+                            <li><?php echo anchor('Ponto/create', 'Cadastrar Ponto' ) ?></li>
+                            <li><?php echo anchor('Ponto/retrieve', 'Listar Ponto(s)' ) ?></li>    
                         </ul>
                     </div>
                 </div>
